@@ -7,33 +7,12 @@ const User = require("./models/Users");
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-const allowedOrigins = [
-  "https://crypto-price-tracker-sooty-pi.vercel.app",
-  "https://crypto-price-tracker-git-main-wasif-patels-projects.vercel.app",
-  "http://localhost:3000"
-];
-
 app.use(
-  cors({
-    origin: function (origin, callback) {
-      // allow server-to-server / Postman
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  })
+	cors({
+		origin: "https://crypto-price-tracker-sooty-pi.vercel.app" || process.env.CLIENT,
+		credentials: true,
+	})
 );
-
-// IMPORTANT: handle preflight
-app.options("*", cors());
-
 
 app.use(express.json());
 const passport = require("./auth");
