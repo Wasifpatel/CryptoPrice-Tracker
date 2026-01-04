@@ -1,0 +1,58 @@
+# =====================
+# Global
+# =====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+.DS_Store
+Thumbs.db
+
+# =====================
+# Client (Frontend)
+# =====================
+client/node_modules/
+client/dist/
+client/build/
+client/.env
+client/.env.*
+
+# React / Vite / Next cache
+client/.cache/
+client/.next/
+client/out/
+client/.vite/
+
+# =====================
+# Server (Backend)
+# =====================
+server/node_modules/
+server/dist/
+server/build/
+server/.env
+server/.env.*
+
+# Logs
+server/logs/
+server/*.log
+
+# =====================
+# IDE / Editor
+# =====================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =====================
+# OS files
+# =====================
+*.log
